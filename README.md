@@ -1,2 +1,2 @@
-# Paytm-Wallet
+# FlexiWallet
 MERN Project
