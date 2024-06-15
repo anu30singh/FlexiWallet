@@ -2,6 +2,7 @@ import { useState } from 'react'
 import NavBar from './components/NavBar' 
 import './index.css'
 import LandingPage from './components/LandingPage'
+import AboutUs from './components/AboutUs'
 
 function App() {
   
@@ -9,6 +10,7 @@ function App() {
     <>
     <NavBar />
     <LandingPage />
+    <AboutUs />
     </>
   )
 }

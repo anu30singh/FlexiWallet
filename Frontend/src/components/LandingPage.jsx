@@ -17,7 +17,7 @@ const LandingPage = () => {
           FlexiWallet is a cutting-edge digital wallet solution designed to streamline your financial transactions. With FlexiWallet,
            you can securely manage your funds, make payments, and transfer money effortlessly.
           </p>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded">Get Started</button>
+          <button className="bg-blue-500 text-white text-semibold px-4 py-2 rounded">Get Started</button>
         </div>
       </div>
     </div>

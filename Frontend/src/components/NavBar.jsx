@@ -19,7 +19,7 @@ const NavBar = () => {
           <a href="#" className="text-white font-semibold ">Home</a>
           <a href="#" className="text-white font-semibold">About Us</a>
           <a href="#" className="text-white font-semibold">Transfer Money</a>
-          <a href="#" className="text-white font-semibold">Support</a>
+          <a href="#" className="text-white font-semibold">FAQ</a>
         </div>
       </div>
     </nav>
