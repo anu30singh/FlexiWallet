@@ -15,11 +15,15 @@ const NavBar = () => {
             </svg>
           </button>
         </div>
-        <div className={`lg:flex ${isOpen ? 'block' : 'hidden'} space-x-8`}>
+        <div className={`lg:flex ${isOpen ? 'block' : 'hidden'} space-x-10`}> 
           <a href="#" className="text-white font-semibold ">Home</a>
           <a href="#" className="text-white font-semibold">About Us</a>
           <a href="#" className="text-white font-semibold">Transfer Money</a>
           <a href="#" className="text-white font-semibold">FAQ</a>
+          <button className="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600">Login</button>
+         
+         
+
         </div>
       </div>
     </nav>
