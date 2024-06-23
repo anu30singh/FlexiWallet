@@ -1,7 +1,9 @@
 import React from 'react';
 import image from '../assets/E-Wallet.png';
 import './LandingPage.css';
+
 const LandingPage = () => {
+
   return (
     <div className="container mx-auto p-4">
       <div className="flex flex-col lg:flex-row items-center lg:items-start">
