@@ -1,12 +1,10 @@
-require ('dotenv').config();
+require('dotenv').config();
 const mongoose = require("mongoose");
 const { type } = require('os');
 
 
-console.log('Mongo_URI:', process.env.Mongo_URI);
 
-const mongoURI = process.env.Mongo_URI;
-mongoose.connect(mongoURI);
+mongoose.connect('mongodb+srv://Flexi-Wallet:Hellow@cluster0.lxkucbf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
 const UserSchema = mongoose.Schema({
     userName:{
