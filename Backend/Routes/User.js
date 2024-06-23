@@ -6,7 +6,7 @@ const { User, Account } = require("./Database/db");
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../config");
 const  { authMiddleware } = require("./Middlewares/auth");
-const signupBody = zod.object({
+const signupBody = zod.object({ //zod is a library for data validation in javascript used here for validating the user inputs
     username: zod.string().email(),
 	firstName: zod.string(),
 	lastName: zod.string(),
@@ -30,7 +30,7 @@ router.post("/signup", async (req, res) => {
     const user = await User.create({
         username: req.body.username,
         password: req.body.password,
-        firstName: req.body.firstName,
+        firstName: req.body.firstName, //this is for signing up the user 
         lastName: req.body.lastName,
     })
     const userId = user._id;
@@ -53,13 +53,13 @@ const signinBody = zod.object({
 router.post("/signin", async (req, res) => {
     const { success } = signinBody.safeParse(req.body)
     if (!success) {
-        return res.status(411).json({
+        return res.status(411).json({ //this is for signing in the user with the correct credentials
             message: " Incorrect inputs"
         })
     }
     const user = await User.findOne({
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password //this is for signing in the user
     });
     if (user) {
         const token = jwt.sign({
@@ -79,9 +79,9 @@ const updateBody = zod.object({
     firstName: zod.string().optional(),
     lastName: zod.string().optional(),
 })
-router.put("/", authMiddleware, async (req, res) => {
+router.put("/", auth, async (req, res) => {
     const { success } = updateBody.safeParse(req.body)
-    if (!success) {
+    if (!success) {  //this is for updating the user information
         res.status(411).json({
             message: "Error while updating information"
         })
@@ -98,7 +98,7 @@ router.get("/bulk", async (req, res) => {
     const filter = req.query.filter || "";
 
     const users = await User.find({
-        $or: [{
+        $or: [{                     //these queries is for finding user by first name or last name from the database
             firstName: {
                 "$regex": filter
             }
@@ -111,10 +111,10 @@ router.get("/bulk", async (req, res) => {
     res.json({
         user: users.map(user => ({
             username: user.username,
-            firstName: user.firstName,
+            firstName: user.firstName, //this is for getting the user information
             lastName: user.lastName,
             _id: user._id
         }))
     })
 })
-module.exports = router;
+module.exports = router; //exporting the router

@@ -2,7 +2,11 @@ require ('dotenv').config();
 const mongoose = require("mongoose");
 const { type } = require('os');
 
-mongoose.connect (process.env.Mongo_URI);
+
+console.log('Mongo_URI:', process.env.Mongo_URI);
+
+const mongoURI = process.env.Mongo_URI;
+mongoose.connect(mongoURI);
 
 const UserSchema = mongoose.Schema({
     userName:{
@@ -31,7 +35,7 @@ const Users = mongoose.model("Users" , UserSchema);
 
 const accountSchema = new mongoose.Schema({
     userId: {
-        type: mongoose.Schema.Types.ObjectId, // Reference to User model
+        type: mongoose.Schema.Types.ObjectId, 
         ref: 'Users',
         required: true
     },
@@ -41,7 +45,8 @@ const accountSchema = new mongoose.Schema({
     }
 });
 
-const Account = mongoose.model('Account', accountSchema);
+const Account = mongoose.model('Account', accountSchema); 
+
 const User = mongoose.model('Users', UserSchema);
 
 module.exports = {
