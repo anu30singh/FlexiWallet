@@ -2,10 +2,10 @@ const express = require('express');
 
 const router = express.Router();
 const zod = require("zod");
-const { User, Account } = require("./Database/db");
+const { User, Account } = require("../Database/db");
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../config");
-const  { authMiddleware } = require("./Middlewares/auth");
+const  { authMiddleware } = require("../Middlewares/auth");
 const signupBody = zod.object({ //zod is a library for data validation in javascript used here for validating the user inputs
     username: zod.string().email(),
 	firstName: zod.string(),
@@ -79,7 +79,7 @@ const updateBody = zod.object({
     firstName: zod.string().optional(),
     lastName: zod.string().optional(),
 })
-router.put("/", auth, async (req, res) => {
+router.put("/",authMiddleware, async (req, res) => {
     const { success } = updateBody.safeParse(req.body)
     if (!success) {  //this is for updating the user information
         res.status(411).json({
