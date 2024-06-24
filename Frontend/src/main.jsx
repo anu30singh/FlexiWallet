@@ -8,6 +8,8 @@ import LandingPage from './components/LandingPage.jsx'
 import AboutUs from './components/AboutUs.jsx'
 import FAQ from './components/FAQ.jsx'
 import Login from './components/Login.jsx'
+import FirstUser from './components/FirstUser.jsx'
+
 
 
 const router = createBrowserRouter([
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "Login",
         element: <Login/>
+      },
+      {
+        path: "FirstUser",
+        element: <FirstUser/>
       },
       
     ]

@@ -1,6 +1,7 @@
 import React from 'react';
 import image from '../assets/E-Wallet.png';
 import './LandingPage.css';
+import {Link , NavLink} from 'react-router-dom'
 
 const LandingPage = () => {
 
@@ -20,7 +21,8 @@ const LandingPage = () => {
           FlexiWallet is a cutting-edge digital wallet solution designed to streamline your financial transactions.
           </p>
           <hr className="my-6 border-gray-300" />
-          <button className="bg-blue-500 text-white text-semibold px-4 py-2 rounded">Get Started</button>
+          
+          <Link to="/FirstUser" className="bg-blue-500 text-white text-semibold px-4 py-2 rounded">Get Started</Link>
          
         </div>
       </div>
