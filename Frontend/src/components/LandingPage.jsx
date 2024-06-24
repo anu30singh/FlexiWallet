@@ -21,6 +21,7 @@ const LandingPage = () => {
           </p>
           <hr className="my-6 border-gray-300" />
           <button className="bg-blue-500 text-white text-semibold px-4 py-2 rounded">Get Started</button>
+         
         </div>
       </div>
     </div>
