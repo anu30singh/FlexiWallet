@@ -7,6 +7,7 @@ import Layout from './Layout.jsx'
 import LandingPage from './components/LandingPage.jsx'
 import AboutUs from './components/AboutUs.jsx'
 import FAQ from './components/FAQ.jsx'
+import Login from './components/Login.jsx'
 
 
 const router = createBrowserRouter([
@@ -25,7 +26,12 @@ const router = createBrowserRouter([
       {
         path: "faq",
         element: <FAQ/>
-      }
+      },
+      {
+        path: "Login",
+        element: <Login/>
+      },
+      
     ]
   }
 ])

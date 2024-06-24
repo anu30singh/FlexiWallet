@@ -27,11 +27,9 @@ const NavBar = () => {
                     <NavLink to="/about" className="text-white font-semibold" activeClassName="underline">About Us</NavLink>
                     <NavLink to="/transfer" className="text-white font-semibold" activeClassName="underline">Transfer Money</NavLink>
                     <NavLink to="/faq" className="text-white font-semibold" activeClassName="underline">FAQ</NavLink>
-                    {isLoggedIn ? (
-                        <button onClick={handleLogout} className="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600">Logout</button>
-                    ) : (
-                        <NavLink to="/login" className="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600" activeClassName="underline">Login</NavLink>
-                    )}
+                    <NavLink to="/login" className="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600">
+                        Login
+                    </NavLink>
                 </div>
             </div>
         </nav>
