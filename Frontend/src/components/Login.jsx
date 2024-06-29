@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LoginImag from '../assets/LoginPage.svg'; 
+import {Link , NavLink} from 'react-router-dom'
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -71,15 +72,16 @@ const Login = () => {
                             />
                             <button
                                 type="button"
-                                className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+                                className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm"
                                 onClick={() => setShowPassword(!showPassword)}
                             >
                                 {showPassword ? 'Hide' : 'Show'}
                             </button>
                         </div>
-                        <button type="submit" className="w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            Login
-                        </button>
+                        <Link to="/dashboard" className="block mx-auto w-full max-w-xs px-4 py-2 my-3 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-center">
+                         Login
+                        </Link>
+                       
                     </form>
                 </div>
             </div>

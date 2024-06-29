@@ -9,6 +9,7 @@ import AboutUs from './components/AboutUs.jsx'
 import FAQ from './components/FAQ.jsx'
 import Login from './components/Login.jsx'
 import FirstUser from './components/FirstUser.jsx'
+import Dashboard from './components/Dashboard.jsx'
 
 
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "FirstUser",
         element: <FirstUser/>
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard/>
       },
       
     ]
