@@ -4,7 +4,7 @@ const { type } = require('os');
 
 
 
-mongoose.connect('mongodb+srv://Flexi-Wallet:Hellow@cluster0.lxkucbf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect(URI);
 
 const UserSchema = mongoose.Schema({
     userName:{
